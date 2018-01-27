@@ -1,2 +1,2 @@
 # johnathan-org
-Repo for the Ghost blog theme for johnathan.org
+Repo for the WordPress theme for johnathan.org
