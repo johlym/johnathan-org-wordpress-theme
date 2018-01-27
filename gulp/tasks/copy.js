@@ -7,7 +7,7 @@ var files = ['app/**/*.php',
 'app/assets/css/**/*',
 'app/assets/fonts/**/*',
 'app/style.css',
-'app/assets/js/*',
+'app/assets/js/**/*',
 'app/assets/images/*',
 'app/assets/svg/*'];
 var base = './app';
