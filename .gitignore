@@ -1,5 +1,6 @@
 .DS_Store
 dist/* 
+app/assets/fonts/fa-*
 app/assets/css/*
 app/assets/scss/module/fontawesome/*
 johnathan-org/*
