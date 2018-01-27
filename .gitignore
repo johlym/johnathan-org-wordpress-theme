@@ -1,6 +1,9 @@
 .DS_Store
-dist/*
+dist/* 
 app/assets/css/*
+app/assets/scss/module/fontawesome/*
+johnathan-org/*
+johnatahn-org.zip
 
 ### Node ###
 # Logs
