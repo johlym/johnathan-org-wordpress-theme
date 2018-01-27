@@ -1,7 +1,9 @@
 .DS_Store
 dist/* 
 app/assets/fonts/fontawesome
-app/assets/css/*
+app/assets/css/maps/*
+app/assets/css/module/*
+app/assets/css/screen.css
 app/assets/scss/module/fontawesome/*
 johnathan-org/*
 johnathan-org.zip
