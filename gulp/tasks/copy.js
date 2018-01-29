@@ -13,7 +13,7 @@ var files = ['app/**/*.php',
 var base = './app';
 var prodDest = './johnathan-org';
 var devDest = '/Users/jlyman/Local\ Sites/johnathanorg-staging/app/public/wp-content/themes/johnathan-org';
-var remoteDest = '/Volumes/wb01-www/wordpress/wp-content/themes/johnathan-org';
+var remoteDest = '/Volumes/johnathan.org/wordpress/wp-content/themes/johnathan-org';
 
 gulp.task('copy', () => {
   return gulp
