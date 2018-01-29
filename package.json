@@ -1,6 +1,6 @@
 {
   "name": "johnathan-org-theme",
-  "description": "A ghost theme for johnathan.org",
+  "description": "A WordPress theme for Johnathan.org",
   "version": "1.9.0",
   "license": "MIT",
   "author": {
@@ -15,7 +15,7 @@
       "Personal Blogs"
     ]
   },
-  "homepage": "https://john.ly",
+  "homepage": "https://johnathan.org",
   "devDependencies": {
     "autoprefixer": "^7.2.3",
     "browser-sync": "^2.22.0",
