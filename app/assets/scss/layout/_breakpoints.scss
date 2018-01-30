@@ -1,9 +1,3 @@
-@media (min-width: 813px) {
-  .mobile-header {
-    display: none;
-  }
-  
-}
 @media (max-width: 812px) {
   .left {
     display: none;
@@ -23,7 +17,7 @@
   
 }
 @media (max-width: 660px) {
-  .mobile-header {
+  .menu-bar-header {
     flex-direction: column;
     height: auto;
   }
@@ -33,11 +27,11 @@
       text-align: center;
     }
   }
-  .mobile-title {
+  .menu-bar-title {
     margin-top: 10px;
     margin-bottom: 0px;
   }
-  .mobile-menu {
+  .menu-bar-menu {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;

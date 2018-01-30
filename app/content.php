@@ -1,7 +1,4 @@
 <article class="h-entry post" itemscope itemtype="http://schema.org/BlogPosting">
-  <?php if ( has_post_thumbnail() ) {?>
-  <div class="post-image"><?php the_post_thumbnail('featured-image'); ?></div>
-  <?php  } ?>
   <h1 class="p-name" itemprop="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
   
   <?php the_content(); ?>

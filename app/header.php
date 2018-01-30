@@ -11,11 +11,12 @@
 </head>
 
 <body class="body"> 
-
-<div class="mobile-header">
-    <div class="mobile-title"><?php echo get_bloginfo( 'name' ); ?></div>
-    <div class="mobile-menu">
-        <?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>    
+<div class="menu-bar-header">
+    <div class="container">
+        <div class="menu-bar-title"><?php echo get_bloginfo( 'name' ); ?></div>
+        <div class="menu-bar-menu">
+            <?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>    
+        </div>
     </div>
 </div>
 
