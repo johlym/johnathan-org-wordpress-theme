@@ -8,6 +8,7 @@
     <link href="https://github.com/johlym" rel="me" />
     <link href="https://twitter.com/_johlym" rel="me" />
     <?php wp_head(); ?>
+    
 </head>
 
 <body class="body"> 

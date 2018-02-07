@@ -1,11 +1,5 @@
 <article class="h-entry post-single" itemscope itemtype="http://schema.org/BlogPosting">
-<?php if ( has_post_thumbnail() ) {?>
-  <figure class="post-image"><?php the_post_thumbnail('featured-image'); ?></figure>
-  <?php  } ?>
-  <h1 class="p-name" itemprop="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
- 
-  
-  <?php the_content(); ?>
+<h1 class="p-name" itemprop="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
   <div class="meta">
     <span class="meta-child">
       <time class="dt-publisheddt-published" itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>">
@@ -42,6 +36,15 @@
       </span>
     </span>
   </div>
+  <?php if ( has_post_thumbnail() ) {?>
+  <figure class="post-image">
+    <?php the_post_thumbnail('featured-image'); ?>
+  </figure>
+<?php  } ?>  
+<div class="the-content">
+  <?php the_content(); ?>
+</div>
+
   <div class="related">
     <h3>Related Posts</h3>
     <?php echo do_shortcode( '[jetpack-related-posts]'); ?>
