@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
-var proxy = 'johnathan-org-staging:80';
+var proxy = 'staging-johnathan-org:80';
 
 gulp.task('browsersync:production', function (callback) {
   browserSync.init({

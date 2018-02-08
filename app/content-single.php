@@ -7,13 +7,14 @@
       </time>
     </span>
     <i class="far fa-fw fa-ellipsis-v"></i>
-    <span class="meta-child meta-category-link">
+    <span class="meta-child meta-category-link">asdfasdfasdfasd
       <?php $category = get_the_category(); ?>
       <a href="<?php echo get_category_link($category[0]->cat_ID) ?>"><i class="far fa-fw fa-folder-open"></i> <?php echo $category[0]->cat_name ?></a>
     </span>
     <i class="far fa-fw fa-ellipsis-v"></i>
     <span class="meta-child meta-comments-link">
-    <a href="<?php comments_link(); ?>"><i class="far fa-fw fa-comments"></i> <?php printf( _nx( '1 Comment', '%1$s Comments', get_comments_number(), 'comments title', 'textdomain' ), number_format_i18n( get_comments_number() ) ); ?></a>
+    <a href="<?php comments_link(); ?>"><i class="far fa-fw fa-comments"></i> 
+    <?php printf( _nx( '1 Comment', '%1$s Comments', get_comments_number(), 'comments title', 'textdomain' ), number_format_i18n( get_comments_number() ) ); ?></a>
     </span>
     <i class="far fa-fw fa-ellipsis-v"></i>
     <span class="meta-child meta-permalink-link"> 

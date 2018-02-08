@@ -1,5 +1,8 @@
 <article class="h-entry aside" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="the-content">
   <?php the_content(); ?>
+
+</div>
   <div class="meta">
     <span class="meta-child">
       <time class="dt-publisheddt-published" itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>">
@@ -12,4 +15,3 @@
     </span>
   </div>
 </article>
-<hr />
