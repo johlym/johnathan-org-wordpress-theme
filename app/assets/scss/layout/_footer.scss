@@ -1,0 +1,31 @@
+.footer-columns {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-content: center;
+  align-items: flex-start;
+  width: 100%;
+  .footer-column {
+    flex: 0 1 33.3333%;
+    align-self: auto;
+    font-size: 14px;
+  }
+
+  .column-powered {
+    .pb-link img {
+      width: 14px;
+      height: 14px;
+      position: relative;
+      filter: grayscale(100%);
+      top: 1px;
+    }
+  }
+  .column-copyright {
+    text-align: center;
+  }
+  .column-stats {
+    text-align: right;
+  }
+}

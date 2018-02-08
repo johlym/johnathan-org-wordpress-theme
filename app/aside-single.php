@@ -1,16 +1,23 @@
 <article class="h-entry aside" itemscope itemtype="http://schema.org/BlogPosting">
-  <?php the_content(); ?>
-  <div class="meta">
+<div class="article-body">
+  <div class="article-meta">
     <span class="meta-child">
+      <i class="far fa-fw fa-clock"></i>
       <time class="dt-publisheddt-published" itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>">
-        <?php echo get_the_date('F j, Y g:ma'); ?>
+      <a href="<?php the_permalink(); ?>" class="u-url"><?php echo get_the_date('F j, Y'); ?></a>
       </time>
     </span>
-    <i class="far fa-fw fa-ellipsis-v"></i> 
-    <span class="meta-child meta-permalink-link"> 
-      <a href="<?php the_permalink(); ?>" class="u-url"><i class="far fa-fw fa-link"></i> Permalink</a>
+    <span class="meta-child meta-category-link">
+      <i class="far fa-fw fa-folder-open"></i>
+      <?php $category = get_the_category(); ?>
+      <a href="<?php echo get_category_link($category[0]->cat_ID) ?>"> <?php echo $category[0]->cat_name ?></a>
     </span>
   </div>
+  <div class="article-content">
+    <?php the_content(); ?>
+
+  </div>
+</div>
   <div class="comments">
     <?php comments_template(); ?>
   </div>
