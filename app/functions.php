@@ -74,9 +74,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 }
 
 function johnathan_org_post_formats_setup() {
-	add_theme_support( 'post-formats', array( 'aside', 'post' ) );
-	add_theme_support( 'post-formats', array( 'link', 'post' ) );
-
+	add_theme_support( 'post-formats', array( 'aside', 'link', 'post' ) );
 }
 add_action( 'after_setup_theme', 'johnathan_org_post_formats_setup' );
 

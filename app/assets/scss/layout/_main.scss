@@ -172,7 +172,7 @@ body {
           order: 0;
           flex: 0 2 75%;
           align-self: auto;
-          > table {
+          .e-content > table {
             border-spacing: 0px;
             border-collapse: collapse;
             width: 100%;
@@ -364,6 +364,9 @@ body {
       }
       .post-image {
         margin: 0 0 20px 0;
+        position: relative;
+        left: calc(-20vw + 50%);
+        width: 60vw;
         img {
           max-width: 100%;
           height: auto;
