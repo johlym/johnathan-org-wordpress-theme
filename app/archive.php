@@ -2,11 +2,8 @@
 
 <!-- body -->
     <div class="container">
-        <div class="left">
-          <?php get_sidebar(); ?>
-        </div>
-        <div class="right">
-            <div class="right-wrapper" id="infinite">
+        <div class="column">
+            <div class="column-wrapper" id="infinite">
             <?php 
             // Check if there are any posts to display
             if ( have_posts() ) : ?>

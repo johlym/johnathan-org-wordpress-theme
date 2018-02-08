@@ -2,11 +2,9 @@
 
 <!-- body -->
     <div class="container">
-        <div class="left">
-          <?php get_sidebar(); ?>
-        </div>
-        <div class="right">
-            <div class="right-wrapper">
+        <div class="column">
+            <div class="column-wrapper" id="infinite">
+            
             <?php 
             if ( have_posts() ) : while ( have_posts() ) : the_post();
               get_template_part( 'page-general', get_post_format() );
