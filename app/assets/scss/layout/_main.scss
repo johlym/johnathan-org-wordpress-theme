@@ -93,6 +93,11 @@ body {
         color: #4392F1 !important;
       }
     }
+    article.page {
+      h1 a {
+        text-decoration: none;
+      }
+    }
     article.aside {
       margin-bottom: 40px;
       a {
