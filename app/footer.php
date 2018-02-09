@@ -7,7 +7,6 @@
         <a class="pb-link" href="https://wordpress.org"><i class="fab fa-wordpress"></i></a>
         <a class="pb-link" href="https://letsencrypt.org"><i class="fal fa-lock"></i></a>
         <a class="pb-link" href="https://dnsimple.com"><img class="pb-small" src="<?php echo get_bloginfo('template_directory'); ?>/assets/svg/dnsimple.com.svg" /></a>
-        <a class="pb-link" href="https://link.johnathan.org/keycdn"><i class="fab fa-keycdn"></i></a>
         <a href="https:////fontawesome.com" class="pb-link"><i class="fab fa-font-awesome-flag"></i></a>
         </div>
         <div class="footer-column column-copyright">
