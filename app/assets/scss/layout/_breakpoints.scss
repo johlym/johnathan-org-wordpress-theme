@@ -21,11 +21,11 @@
     }
   }
   article.post,
-  article.post-single {
+  article.post-single,
+  article.link {
     h1 {
       text-indent: 0 !important;
       text-align: center;
-      font-size: 2rem !important;
       i {
         display: none;
       }

@@ -93,6 +93,10 @@ body {
       a {
         color: #4392F1 !important;
       }
+      a, h1>i {
+        color: #4392F1 !important;
+        margin-right: 16px;
+      }
     }
     article.page {
       h1 a {
@@ -155,7 +159,8 @@ body {
 
     article.post,
     article.post-single,
-    article.aside {
+    article.aside,
+    article.link {
       .article-body {
         flex: 0 2 auto;
         display: flex;
@@ -305,7 +310,8 @@ body {
     }
 
     article.post,
-    article.post-single {
+    article.post-single,
+    article.link {
       margin-bottom: 40px;
 
       .slim-entry {
