@@ -1,0 +1,36 @@
+@media (max-width: 1024px) { 
+  article {
+    .article-body {
+      flex-direction: column !important;
+      .article-meta {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        .meta-child {
+          display: inline-block !important;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+  article.post,
+  article.post-single {
+    h1 {
+      text-indent: 0 !important;
+      text-align: center;
+      font-size: 2rem !important;
+      i {
+        display: none;
+      }
+    }
+  }
+}
+@media (max-width: 769px) {
+  .menu-bar-header {
+    .container {
+      flex-direction: column;
+      .menu-bar-title {
+      }
+    }
+  }
+}

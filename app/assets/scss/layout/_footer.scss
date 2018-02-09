@@ -1,3 +1,8 @@
+.footer {
+  
+
+}
+
 .footer-columns {
   margin-bottom: 40px;
   display: flex;
@@ -7,10 +12,15 @@
   align-content: center;
   align-items: flex-start;
   width: 100%;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  margin: 0 12px;
+
   .footer-column {
     flex: 0 1 33.3333%;
     align-self: auto;
     font-size: 14px;
+    
   }
 
   .column-powered {
@@ -27,5 +37,6 @@
   }
   .column-stats {
     text-align: right;
+
   }
 }

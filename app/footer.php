@@ -1,5 +1,5 @@
 <!-- footer -->
-<div class="container">
+<div class="container footer">
     <div class="footer-columns">
         <div class="footer-column column-powered">
         Powered by: <br />
