@@ -129,8 +129,10 @@ body {
 
     article.post,
     article.post-single {
-      h1>a, h1>i {
+      h1>a, h1>i, .article-content div.e-content p a {
         color: #00CC99 !important;
+      }
+      h1>a, h1>i {
         margin-right: 16px;
       }
       .article-content {
