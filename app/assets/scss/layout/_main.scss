@@ -93,7 +93,7 @@ body {
       a {
         color: #4392F1 !important;
       }
-      a, h1>i {
+      h1>a, h1>i {
         color: #4392F1 !important;
         margin-right: 16px;
       }
@@ -129,7 +129,7 @@ body {
 
     article.post,
     article.post-single {
-      a, h1>i {
+      h1>a, h1>i {
         color: #00CC99 !important;
         margin-right: 16px;
       }
@@ -644,6 +644,7 @@ body {
               display: block;
               text-align: center;
               padding: 0 5px;
+              font-size: 0.9rem;
             }
           }
         }
