@@ -10,8 +10,9 @@
             <?php echo get_bloginfo('template_directory'); ?>/assets/images/headshot_3x.jpg 3x" alt="Johnathan Lyman" class="photo" >
         </div>
         <h1><a href="<?php echo site_url(); ?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
-        My name is <a href="/about" class="h-card" rel="me">Johnathan Lyman</a> and <span class="p-note">I am an engineer at <a href="//papertrail.com">Papertrail</a>, 
-        a huge Apple nerd and semi-regular blogger. I enjoy bubble tea way too much and find Farming Simulator relaxing.</span>
+        <p>
+        My name is <a href="/about" class="h-card" rel="me">Johnathan Lyman</a>. <span class="p-note">I'm an engineer at <a href="//papertrail.com">Papertrail</a>, 
+        a huge Apple nerd and semi-regular blogger. I enjoy bubble tea way too much and find Farming Simulator relaxing.</span></p>
         <a href="/about">Find out more</a>.
     </div>
 </div>
@@ -29,7 +30,6 @@
     <?php echo wp_count_posts( 'post' )->publish; ?> posts and 
     <?php echo wp_count_posts( 'page' )->publish; ?> pages were made with 
     <i class="far fa-heart"></i> and <i class="far fa-coffee"></i> in Seattle.<br /><br />
-    <small>Theme version <code>VERSION_NUMBER</code></small>
 </div>
 <div class="widget left-flex-child">
     Powered by: <br />

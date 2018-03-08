@@ -13,11 +13,7 @@
       <?php $category = get_the_category(); ?>
       <a href="<?php echo get_category_link($category[0]->cat_ID) ?>"><i class="far fa-fw fa-folder-open"></i> <?php echo $category[0]->cat_name ?></a>
     </span>
-    <span class="meta-child meta-permalink-link"> 
-    <a href="<?php the_permalink(); ?>" class="u-url"><i class="far fa-fw fa-link"></i></a>
-    </span>
   </div>
   <?php the_content(); ?>
   
 </article>
-<hr />

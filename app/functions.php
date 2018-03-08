@@ -69,7 +69,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 
   // additional image sizes
   // delete the next line if you do not need additional image sizes
-  add_image_size( 'featured-image', 875, 9999 ); //300 pixels wide (and unlimited height)
+  add_image_size( 'featured-image', 1200, 9999 ); //300 pixels wide (and unlimited height)
 }
 
 function johnathan_org_post_formats_setup() {
