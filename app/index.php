@@ -1,5 +1,5 @@
+<!-- template: index -->
 <?php get_header(); ?>
-
 <!-- body -->
     <div class="container">
         <div class="left">
@@ -38,3 +38,4 @@
 <!-- / body -->
 
 <?php get_footer(); ?>
+<!-- / template: index -->

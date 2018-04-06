@@ -1,4 +1,4 @@
-<!-- footer -->
+<!-- template: footer -->
 
 <div style="display: none"><address id="hcard-Johnathan-Lyman" class="vcard">
  <a class="url lead fn" href="https://johnathan.org">Johnathan Lyman</a>
@@ -40,6 +40,5 @@
     </script>
     <?php wp_footer(); ?> 
 </body>
-
 </html>
-<!-- / footer -->
+<!-- / template: footer -->

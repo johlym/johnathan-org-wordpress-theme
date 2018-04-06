@@ -1,3 +1,4 @@
+<!-- template: aside -->
 <article class="h-entry aside" itemscope itemtype="http://schema.org/BlogPosting">
   <?php the_content(); ?>
   <div class="meta">
@@ -12,3 +13,4 @@
     </span>
   </div>
 </article>
+<!-- / template: aside -->

@@ -1,6 +1,6 @@
+<!-- template: archive -->
 <?php get_header(); ?>
 
-<!-- body -->
     <div class="container">
         <div class="left">
           <?php get_sidebar(); ?>
@@ -58,6 +58,6 @@
             </div>
         </div>
     </div>
-<!-- / body -->
 
 <?php get_footer(); ?>
+<!-- /template: archive -->

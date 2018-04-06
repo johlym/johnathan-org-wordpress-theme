@@ -1,3 +1,4 @@
+<!-- template: aside single -- >
 <article class="h-entry aside" itemscope itemtype="http://schema.org/BlogPosting">
   <?php the_content(); ?>
   <div class="meta">
@@ -25,3 +26,4 @@
   <?php next_post_link( '%link <i class="far fa-angle-double-right"></i>' ); ?>
   </div>
 </div>
+<!-- / template: aside single -->

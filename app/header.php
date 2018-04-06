@@ -1,3 +1,4 @@
+<!-- template: header -- >
 <!doctype html>
 
 <head>
@@ -12,11 +13,12 @@
 
 <body class="body"> 
 
+
 <div class="mobile-header">
     <div class="mobile-title"><?php echo get_bloginfo( 'name' ); ?></div>
     <div class="mobile-menu">
         <?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>    
     </div>
 </div>
+<!-- / template: header -->
 
-<!-- / header -->
