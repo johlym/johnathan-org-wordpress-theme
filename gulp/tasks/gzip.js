@@ -3,7 +3,7 @@ var gzip = require('gulp-gzip');
 
 gulp.task('gzip', () => {
   return gulp
-    .src('johnathan-org/assets/**/*.{css,js}')
+    .src('jorgredux/assets/**/*.{css,js}')
     .pipe(gzip())
-    .pipe(gulp.dest('johnathan-org/assets'));
+    .pipe(gulp.dest('jorgredux/assets'));
 });

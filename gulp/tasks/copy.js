@@ -11,9 +11,9 @@ var files = ['app/**/*.php',
 'app/assets/images/*',
 'app/assets/svg/*'];
 var base = './app';
-var prodDest = './johnathan-org';
-var devDest = '/Users/jlyman/Local\ Sites/stagingjohnathanorg/app/public/wp-content/themes/johnathan-org';
-var remoteDest = '/Volumes/johnathan.org/johnathan.org/wordpress/wp-content/themes/johnathan-org';
+var prodDest = './release';
+var devDest = '../app/public/wp-content/themes/jorgredux';
+var remoteDest = '/Volumes/wp-web/wp-content/themes/jorgredux';
 
 gulp.task('copy', () => {
   return gulp
@@ -31,7 +31,7 @@ gulp.task('copy:dev', () => {
 
 gulp.task('copy:prod', () => {
   return gulp
-  .src(['./johnathan-org/**/*'], {base: './johnathan-org'})
+  .src(['./release/**/*'], {base: './release'})
   .pipe(debug({title: 'Copying to production destination:'}))
   .pipe(gulp.dest(remoteDest));
 });

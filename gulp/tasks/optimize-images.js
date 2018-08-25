@@ -6,7 +6,7 @@ gulp.task('optimize:images', () => {
   return gulp
     .src('app/assets/images/**/*.{jpg,jpeg,png,gif,svg}')
     .pipe(imagemin())
-    .pipe(gulp.dest('johnathan-org/assets/images'))
+    .pipe(gulp.dest('release/assets/images'))
     .pipe(size({
       showFiles: true
     }));

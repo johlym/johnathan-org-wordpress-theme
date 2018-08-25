@@ -20,6 +20,7 @@ gulp.task('dist', function (callback) {
 gulp.task('dist:prod', function (callback) {  
   runSequence(
     'dist',
+    'bump',
     'copy:prod',
     callback
   );

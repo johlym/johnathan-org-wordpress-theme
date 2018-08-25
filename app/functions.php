@@ -28,6 +28,7 @@ add_action( 'init', 'register_primary_menu' );
  */
 function widgets_init() {
 
+  // left sidebar
 	register_sidebar( array(
 		'name'          => 'Left Sidebar',
 		'id'            => 'left-sidebar',
@@ -35,7 +36,27 @@ function widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3>',
 		'after_title'   => '</h3>',
-	) );
+  ) );
+  
+  // ad block
+  register_sidebar( array(
+    'name'          => 'Ad Block',
+    'id'            => 'ad-block',
+    'before_widget' => '<div class="widget left-flex-child ad">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>',
+  ) );
+
+  // after-post block
+  register_sidebar( array(
+    'name'          => 'After Single Post',
+    'id'            => 'apw-block',
+    'before_widget' => '<div class="apw-widget">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>',
+  ) );
 
 }
 add_action( 'widgets_init', 'widgets_init' );

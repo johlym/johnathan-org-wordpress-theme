@@ -1,5 +1,12 @@
-<!-- template: footer -->
-
+<!-- footer -->
+<div class="container">
+  <div class="footer">
+    <div class="footer-text">
+    <i class="far fa-copyright"></i> 
+    2014 – <?php echo date('Y'); ?> Johnathan Lyman.<br /><br />Uptime: <span class="uptime-number"><i class="far fa-sync fa-spin"></i></span> <a href="//status.johnathan.org"><i class="far fa-external-link"></i></a>
+    </div>
+  </div>
+</div>
 <div style="display: none"><address id="hcard-Johnathan-Lyman" class="vcard">
  <a class="url lead fn" href="https://johnathan.org">Johnathan Lyman</a>
  <div class="adr">
@@ -16,7 +23,7 @@
 
     
 
-    <script src="/wp-content/themes/johnathan-org/assets/js/highlight.min.js"></script>
+    <script src="/wp-content/themes/jorgredux/assets/js/highlight.min.js"></script>
     <script>
     hljs.initHighlightingOnLoad();
 

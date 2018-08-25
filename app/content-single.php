@@ -6,24 +6,19 @@
   <div class="meta">
     <span class="meta-child">
       <time class="dt-publisheddt-published" itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>">
-        <?php echo get_the_date('F j, Y g:ma'); ?>
+      <?php echo get_the_date('l, F d, Y h:i a'); ?>
       </time>
-    </span>
-    <span class="meta-child meta-category-link">
-      <?php $category = get_the_category(); ?>
-      <a href="<?php echo get_category_link($category[0]->cat_ID) ?>"><i class="far fa-fw fa-folder-open"></i> <?php echo $category[0]->cat_name ?></a>
     </span>
   </div>
   <?php the_content(); ?>
-  <div class="related">
-    <h3>Related Posts</h3>
-    <?php echo do_shortcode( '[jetpack-related-posts]'); ?>
-  </div>
-  <div class="comments">
-  <?php comments_template(); ?>
-  </div>
 </article>
-<br /><br />
+<div class="after-post-widgets">
+<?php if ( is_active_sidebar( 'apw-block' ) ) : ?>
+    <!-- apw-block -->
+    <?php dynamic_sidebar( 'apw-block' ); ?>
+    <!-- / apw-block -->
+<?php endif; ?>
+</div>
 <div class="pagination">
   <div class="later">
   <?php previous_post_link( '<i class="far fa-angle-double-left"></i> %link' ); ?>

@@ -4,9 +4,9 @@ var size = require('gulp-size');
 
 gulp.task('optimize:css', () => {
   return gulp
-    .src('dist/assets/css/**/*.css')
+    .src('app/assets/css/**/*.css')
     .pipe(cssnano())
-    .pipe(gulp.dest('johnathan-org/assets/css'))
+    .pipe(gulp.dest('release/assets/css'))
     .pipe(size({
       showFiles: true
     }));

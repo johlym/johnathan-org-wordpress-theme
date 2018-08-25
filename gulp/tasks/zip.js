@@ -4,8 +4,8 @@ var size = require('gulp-size');
 
 gulp.task('zip', () => {
   return gulp
-    .src('johnathan-org/**/*')
-    .pipe(zip('johnathan-org.zip'))
+    .src('./release/**/*')
+    .pipe(zip('release.zip'))
     .pipe(gulp.dest('./'))
     .pipe(size());
 });
