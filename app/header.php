@@ -8,7 +8,6 @@
     <link href="https://github.com/johlym" rel="me" />
     <link href="https://twitter.com/_johlym" rel="me" />
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto:400,700,900" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <?php wp_head(); ?>
 </head>
 <body class="body"> 

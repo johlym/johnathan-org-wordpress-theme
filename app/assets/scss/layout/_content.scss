@@ -11,7 +11,7 @@
     margin-top: 0;
   } 
   article {
-    width: 960px;
+    width: 770px;
     margin: 0 auto;
     a {
       color: #444;
@@ -68,7 +68,9 @@
     .content {
       float: left;
       clear: none;
-      width: 760px;
+      width: 570px;
+      margin-bottom: 2em;
+      min-height: 258px;
       > table {
         border-spacing: 0px;
         border-collapse: collapse;
@@ -233,9 +235,10 @@
     height: 1px;
     border: 0;
     width: 100%; 
+    margin-bottom: 2em;
   }
   div.pagination {
-    max-width: 960px;
+    max-width: 770px;
     margin: 2em auto;
     display: flex;
     flex-direction: row;

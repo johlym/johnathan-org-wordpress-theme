@@ -23,9 +23,8 @@
 <div><span class="category">blogging</span>, <span class="category">design</span>, <span class="category">technology</span>, <span class="category">software</span>, <span class="category">development</span>, <span class="category">gaming</span>, <span class="category">photography</span></div>
 </address></div>
 
-    
-
 <script src="/wp-content/themes/jorgredux/assets/js/highlight.min.js"></script>
+<?php wp_footer(); ?> 
 <script>
   // updates uptime counter at the bottom of the page. 
   hljs.initHighlightingOnLoad();
@@ -45,8 +44,6 @@
     }, e1.send()
   };
   null !== uptimeElement && setTimeout(function() { checkAndDisplayUptime() }, 5e3);
-</script>
-<script>
   // sets the reading progress percentage on single-page articles and updates it
   // as a user scrolls.
   $(document).on('ready', function() {  
@@ -72,25 +69,25 @@
     if ($(window).width() >= 980) {
       console.log($(window).width());
       // Check the initial Poistion of the Sticky Header
-      var stickyAdTop = $('.sticky-meta-wrap').offset().top - 20;
-      var stickyAdBottom = $('.main').height() - $('.sticky-meta-wrap').height();
-      $(window).scroll(function(){
-        // we don't want this behavior if the window hasn't scrolled far enough
-        // nor if the window is less than 980px wide. At 979px, we start
-        // implementing breakpoints that require the meta to be in a different
-        // spot not suitable for sticky scrolling.
-        if ( $(window).scrollTop() >= stickyAdTop && $(window).width() > 980) {
-          $('.sticky-meta-wrap').css({position: 'fixed', float: 'right', top: '20px'});
-        }
-        else {
-          $('.sticky-meta-wrap').css({position: '', float: '', top: ''});
-        }
-      });
+      if ($('.sticky-meta-wrap').length != 0) {
+        var stickyAdTop = $('.sticky-meta-wrap').offset().top - 20;
+        var stickyAdBottom = $('.main').height() - $('.sticky-meta-wrap').height();
+        $(window).scroll(function(){
+          // we don't want this behavior if the window hasn't scrolled far enough
+          // nor if the window is less than 980px wide. At 979px, we start
+          // implementing breakpoints that require the meta to be in a different
+          // spot not suitable for sticky scrolling.
+          if ( $(window).scrollTop() >= stickyAdTop && $(window).width() > 980) {
+            $('.sticky-meta-wrap').css({position: 'fixed', float: 'right', top: '40px'});
+          }
+          else {
+            $('.sticky-meta-wrap').css({position: '', float: '', top: ''});
+          }
+        });
+      };      
     };
   });
 </script>
-
-<?php wp_footer(); ?> 
 </body>
 </html>
 <!-- / template: footer -->
