@@ -1,10 +1,12 @@
 <!-- footer -->
-<div class="container">
-  <div class="footer">
-    <div class="footer-text">
-    <i class="far fa-copyright"></i> 
-    2014 – <?php echo date('Y'); ?> Johnathan Lyman.<br /><br />Uptime: <span class="uptime-number"><i class="far fa-sync fa-spin"></i></span> <a href="//status.johnathan.org"><i class="far fa-external-link"></i></a>
-    </div>
+<div class="footer container-object">
+  <div class="footer-text">
+  <i class="far fa-copyright"></i> 
+  2014 – <?php echo date('Y'); ?> Johnathan Lyman.<br /><br />Uptime: <span class="uptime-number"><i class="far fa-sync fa-spin"></i></span> <a href="//status.johnathan.org"><i class="far fa-external-link"></i></a><br /><br />
+  An IndieWeb Webring<br />
+  <a href="https://xn--sr8hvo.ws/🐴📗/previous">←</a>
+  🕸💍
+  <a href="https://xn--sr8hvo.ws/🐴📗/next">→</a>
   </div>
 </div>
 <div style="display: none"><address id="hcard-Johnathan-Lyman" class="vcard">
@@ -45,6 +47,43 @@
 
     null !== uptimeElement && setTimeout(function() { checkAndDisplayUptime() }, 5e3);
     </script>
+    <script>
+
+    $(document).on('ready', function() {  
+      var winHeight = $(window).height(), 
+          docHeight = $('.main').position().top + $('.main').outerHeight(true),
+          max, value;
+
+      /* Set the max scrollable area */
+      var max = docHeight - (winHeight) - ($('.sticky-meta-wrap').height());
+      console.log(max);
+      $(document).on('scroll', function(){
+        value = $(window).scrollTop();
+        num = ((value / max) * 100);
+        if (num <= 100) {
+          $('.progress').text(Math.round(num));
+        } else {
+          $('.progress').text('100');
+        }
+      });
+    });
+
+    $(function(){
+      // Check the initial Poistion of the Sticky Header
+      var stickyAdTop = $('.sticky-meta-wrap').offset().top - 20;
+      var stickyAdBottom = $('.main').height() - $('.sticky-meta-wrap').height();
+
+      $(window).scroll(function(){
+        if ( $(window).scrollTop() <= stickyAdTop ) {
+          $('.sticky-meta-wrap').css({position: 'static', float: 'right', top: '0px'});
+        }
+        else {
+          $('.sticky-meta-wrap').css({position: 'fixed', float: 'right', top: '20px'});
+        }
+      });
+    });
+    </script>
+
     <?php wp_footer(); ?> 
 </body>
 </html>

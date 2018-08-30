@@ -1,6 +1,5 @@
 <!-- template: header -->
 <!doctype html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -8,39 +7,23 @@
     <link href="https://micro.blog/johlym" rel="me" />
     <link href="https://github.com/johlym" rel="me" />
     <link href="https://twitter.com/_johlym" rel="me" />
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto:400,700,900" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <?php wp_head(); ?>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-2388420144037757",
-        enable_page_level_ads: true
-      });
-    </script>
 </head>
-
 <body class="body"> 
-
-
-<div class="mobile-header">
-  <div class="column-1">
-    <div class="mobile-title">
-      <h1><a href="<?php echo site_url(); ?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>  
-    </div>
-    <div class="mobile-menu">
-      <?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>  
-    </div>
+<div class="header part">
+  <div class="site-title">
+  <h1><a href="<?php echo site_url(); ?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
+  <span class="byline">by Johnathan Lyman</span>
   </div>
-  <div class="column-2">
+  <div class="site-menu">
+  <?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
+  </div>
 
-  </div>
-    
-</div>
-<div class="container">
-  <div class="header">
-    <div class="site-title">
-    <h1><a href="<?php echo site_url(); ?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
-    </div>
-  </div>
+  <!-- <?php if ( is_active_sidebar( 'ad-block' ) ) : ?>
+  <?php dynamic_sidebar( 'ad-block' ); ?>
+  <?php endif; ?> -->
 </div>
 <!-- / template: header -->
 

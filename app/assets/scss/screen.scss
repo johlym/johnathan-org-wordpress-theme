@@ -5,8 +5,9 @@
 @import "base/colors";
 @import "base/fonts";
 
-@import "layout/header";
 @import "layout/main";
+@import "layout/header";
+@import "layout/content";
 @import "layout/footer";
 
 @import "animations/ellipsis";
@@ -20,3 +21,4 @@
 @import "module/fontawesome/fa-regular";
 @import "module/fontawesome/fa-brands";
 @import "module/alerts";
+@import "module/carbon";
