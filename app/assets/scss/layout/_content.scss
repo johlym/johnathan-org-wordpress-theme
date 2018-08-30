@@ -56,6 +56,9 @@
           a {
             color: #bbb;
           }
+          .detail {
+            display: block;
+          }
         }
         .ad {
           margin-top: 20px;
@@ -232,6 +235,8 @@
     width: 100%; 
   }
   div.pagination {
+    max-width: 960px;
+    margin: 2em auto;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;

@@ -25,66 +25,72 @@
 
     
 
-    <script src="/wp-content/themes/jorgredux/assets/js/highlight.min.js"></script>
-    <script>
-    hljs.initHighlightingOnLoad();
-
-    var uptimeElement = document.querySelector(".uptime-number");
-    checkAndDisplayUptime = function() {
-        var e1 = new XMLHttpRequest;
-        e1.open("get", "https://updown.io/api/checks?api-key=ro-aNa87VGVKAjK8d9qa8Dk", !0), e1.responseType = "json", e1.onload = function() {
-            if (200 === e1.status) {
-            var a1 = e1.response;
-            if (null !== a1[0].uptime) {
-                uptimeElement.innerHTML = a1[0].uptime + "%"
-            }
-            else {
-                uptimeElement.innerHTML = "unknown %";
-            }
-            }
-        }, e1.send()
-    };
-
-    null !== uptimeElement && setTimeout(function() { checkAndDisplayUptime() }, 5e3);
-    </script>
-    <script>
-
-    $(document).on('ready', function() {  
-      var winHeight = $(window).height(), 
-          docHeight = $('.main').position().top + $('.main').outerHeight(true),
-          max, value;
-
-      /* Set the max scrollable area */
-      var max = docHeight - (winHeight) - ($('.sticky-meta-wrap').height());
-      console.log(max);
-      $(document).on('scroll', function(){
-        value = $(window).scrollTop();
-        num = ((value / max) * 100);
-        if (num <= 100) {
-          $('.progress').text(Math.round(num));
-        } else {
-          $('.progress').text('100');
+<script src="/wp-content/themes/jorgredux/assets/js/highlight.min.js"></script>
+<script>
+  // updates uptime counter at the bottom of the page. 
+  hljs.initHighlightingOnLoad();
+  var uptimeElement = document.querySelector(".uptime-number");
+  checkAndDisplayUptime = function() {
+    var e1 = new XMLHttpRequest;
+    e1.open("get", "https://updown.io/api/checks?api-key=ro-aNa87VGVKAjK8d9qa8Dk", !0), e1.responseType = "json", e1.onload = function() {
+      if (200 === e1.status) {
+      var a1 = e1.response;
+        if (null !== a1[0].uptime) {
+            uptimeElement.innerHTML = a1[0].uptime + "%"
         }
-      });
-    });
+        else {
+            uptimeElement.innerHTML = "unknown %";
+        }
+      }
+    }, e1.send()
+  };
+  null !== uptimeElement && setTimeout(function() { checkAndDisplayUptime() }, 5e3);
+</script>
+<script>
+  // sets the reading progress percentage on single-page articles and updates it
+  // as a user scrolls.
+  $(document).on('ready', function() {  
+    var winHeight = $(window).height(), 
+        docHeight = $('.main').position().top + $('.main').outerHeight(true),
+        max, value;
 
-    $(function(){
+    /* Set the max scrollable area */
+    var max = docHeight - (winHeight) - ($('.sticky-meta-wrap').height());
+    $(document).on('scroll', function(){
+      value = $(window).scrollTop();
+      num = ((value / max) * 100);
+      if (num <= 100) {
+        $('.progress').text(Math.round(num));
+      } else {
+        $('.progress').text('100');
+      }
+    });
+  });
+
+  // makes the post meta zone sticky when a user scrolls past a certain point.
+  $(function(){
+    if ($(window).width() >= 980) {
+      console.log($(window).width());
       // Check the initial Poistion of the Sticky Header
       var stickyAdTop = $('.sticky-meta-wrap').offset().top - 20;
       var stickyAdBottom = $('.main').height() - $('.sticky-meta-wrap').height();
-
       $(window).scroll(function(){
-        if ( $(window).scrollTop() <= stickyAdTop ) {
-          $('.sticky-meta-wrap').css({position: 'static', float: 'right', top: '0px'});
-        }
-        else {
+        // we don't want this behavior if the window hasn't scrolled far enough
+        // nor if the window is less than 980px wide. At 979px, we start
+        // implementing breakpoints that require the meta to be in a different
+        // spot not suitable for sticky scrolling.
+        if ( $(window).scrollTop() >= stickyAdTop && $(window).width() > 980) {
           $('.sticky-meta-wrap').css({position: 'fixed', float: 'right', top: '20px'});
         }
+        else {
+          $('.sticky-meta-wrap').css({position: '', float: '', top: ''});
+        }
       });
-    });
-    </script>
+    };
+  });
+</script>
 
-    <?php wp_footer(); ?> 
+<?php wp_footer(); ?> 
 </body>
 </html>
 <!-- / template: footer -->

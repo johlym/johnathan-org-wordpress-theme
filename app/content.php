@@ -20,10 +20,10 @@
   <div class="meta">
     <div class="meta-wrap">
       <div class="p-details">
-        <strong>Posted by</strong> <span class="author"><?php echo get_the_author(); ?></span><br />
-        <strong>On:</strong> <time class="dt-publisheddt-published" itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>">
-        <a href="<?php the_permalink(); ?>"><?php echo get_the_date('F d, Y h:i a'); ?></a></time><br />
-        <strong>Under:</strong> <?php the_category(', '); ?><br />
+      <div class="detail author"><strong>Posted by</strong> <span class="author-name"><?php echo get_the_author(); ?></span></div>
+        <div class="detail date"><strong>On:</strong> <time class="dt-publisheddt-published" itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>">
+        <a href="<?php the_permalink(); ?>"><?php echo get_the_date('F d, Y h:i a'); ?></a></time></div>
+        <div class="detail category"><strong>Under:</strong> <?php the_category(', '); ?><br /></div>
       </div>
       <?php if ($current_post == 0): ?>
       <div class="ad">

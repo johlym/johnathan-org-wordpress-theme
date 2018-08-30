@@ -8,11 +8,11 @@
   <div class="meta">
     <div class="sticky-meta-wrap">
       <div class="p-details">
-        <strong>Posted by</strong> <span class="author"><?php echo get_the_author(); ?></span><br />
-        <strong>On:</strong> <time class="dt-publisheddt-published" itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>">
-        <a href="<?php the_permalink(); ?>"><?php echo get_the_date('F d, Y h:i a'); ?></a></time><br />
-        <strong>Under:</strong> <?php the_category(', '); ?><br />
-        <strong>Reading Progress:</strong> <span class="progress">0</span>%
+        <div class="detail author"><strong>Posted by</strong> <span class="author-name"><?php echo get_the_author(); ?></span></div>
+        <div class="detail date"><strong>On:</strong> <time class="dt-publisheddt-published" itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>">
+        <a href="<?php the_permalink(); ?>"><?php echo get_the_date('F d, Y h:i a'); ?></a></time></div>
+        <div class="detail category"><strong>Under:</strong> <?php the_category(', '); ?><br /></div>
+        <div class="detail reading-progress"><strong>Reading Progress:</strong> <span class="progress">0</span>%</div>
       </div>
       <div class="ad">
       <?php if ( is_active_sidebar( 'ad-block' ) ) : ?>
