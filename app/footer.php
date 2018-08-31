@@ -46,22 +46,20 @@
   null !== uptimeElement && setTimeout(function() { checkAndDisplayUptime() }, 5e3);
   // sets the reading progress percentage on single-page articles and updates it
   // as a user scrolls.
-  $(document).on('ready', function() {  
-    var winHeight = $(window).height(), 
-        docHeight = $('.main').position().top + $('.main').outerHeight(true),
-        max, value;
+  var winHeight = $(window).height(), 
+      docHeight = $('.main').position().top + $('.main').outerHeight(true),
+      max, value;
 
-    /* Set the max scrollable area */
-    var max = docHeight - (winHeight) - ($('.sticky-meta-wrap').height());
-    $(document).on('scroll', function(){
-      value = $(window).scrollTop();
-      num = ((value / max) * 100);
-      if (num <= 100) {
-        $('.progress').text(Math.round(num));
-      } else {
-        $('.progress').text('100');
-      }
-    });
+  /* Set the max scrollable area */
+  var max = docHeight - (winHeight) - ($('.sticky-meta-wrap').height());
+  $(document).on('scroll', function(){
+    value = $(window).scrollTop();
+    num = ((value / max) * 100);
+    if (num <= 100) {
+      $('.progress').text(Math.round(num));
+    } else {
+      $('.progress').text('100');
+    }
   });
 
   // makes the post meta zone sticky when a user scrolls past a certain point.

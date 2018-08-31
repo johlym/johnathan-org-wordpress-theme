@@ -11,16 +11,19 @@
     margin-top: 0;
   } 
   article {
-    width: 770px;
+    width: 880px;
     margin: 0 auto;
     a {
-      color: #444;
+      color: #333;
     }
     h1, h2, h3, h4, h5, h6 {
       font-family: "Playfair Display", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       font-weight: bold;
+      a {
+        text-decoration: none !important;
+      }
     }
-    h1 {
+    h1.post-title {
       margin: 20px 0;
       line-height: 1em;
       font-size: 3em;
@@ -30,14 +33,13 @@
     }
     &.link {
       a {
-        color: #444;
+        color: #333;
       }
       
     }
     .post-image {
       img {
         width: 100%;
-        max-width: 750px;
         margin-bottom: 10px;
         height: auto;
       }
@@ -48,8 +50,8 @@
       color: #bbb;
       font-size: 0.8rem;
       margin-bottom: 10px;
+      width: 180px;
       .meta-wrap, .sticky-meta-wrap {
-        width: 180px;
         .p-details {
           display: inline-block;
           line-height: 1.3em;
@@ -68,7 +70,7 @@
     .content {
       float: left;
       clear: none;
-      width: 570px;
+      width: 680px;
       margin-bottom: 2em;
       min-height: 258px;
       > table {
@@ -111,6 +113,7 @@
         background-color: #eee;
         height: 1px;
         border: 0;
+        clear: both;
       }
       pre {
         border-radius: 2px;
@@ -125,7 +128,6 @@
         &:first-of-type {
           margin-top: 0;
         }
-  
         line-height: 1.8em;
         img {
           max-width: 100%;
@@ -200,6 +202,11 @@
         }
       }
     }
+    .e-content {
+      a {
+        text-decoration: underline;
+      }
+    }
     
   }
   div.after-post-widgets {
@@ -236,9 +243,10 @@
     border: 0;
     width: 100%; 
     margin-bottom: 2em;
+    clear: both;
   }
   div.pagination {
-    max-width: 770px;
+    max-width: 880px;
     margin: 2em auto;
     display: flex;
     flex-direction: row;

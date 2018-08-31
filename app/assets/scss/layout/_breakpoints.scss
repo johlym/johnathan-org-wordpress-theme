@@ -1,12 +1,32 @@
-@media only screen and (max-width:979px) { 
+@media only screen and (max-width:905px) { 
+  .header {
+    .site-menu {
+      height: auto;
+      .menu-primary-container {
+        ul#menu-primary.menu {
+          li {
+            height: 30px;
+            a {
+              padding: 0 10px;
+              line-height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
 	.main {
     padding-top: 0;
       article {
       width: auto;
+      h1.post-title {
+        text-align: center;
+      }
       .meta {
         float: none;
         margin: 0 auto;
         text-align: center;
+        width: 280px;
         .sticky-meta-wrap, .meta-wrap {
           margin: 0 auto;
           width: auto;
@@ -77,6 +97,22 @@
   }
 }
 @media only screen and (max-width:768px) {
+  .header {
+    .site-menu {
+      height: auto;
+      .menu-primary-container {
+        ul#menu-primary.menu {
+          li {
+            height: 30px;
+            overflow: auto;
+            a {
+              padding: 0 10px;
+            }
+          }
+        }
+      }
+    }
+  }
   .main article h1 {
     font-size: 1.85em;
   }
