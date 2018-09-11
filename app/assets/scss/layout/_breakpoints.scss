@@ -1,4 +1,4 @@
-@media only screen and (max-width:905px) { 
+@media only screen and (max-width:880px) { 
   .header {
     .site-menu {
       height: auto;
@@ -17,81 +17,95 @@
   }
 	.main {
     padding-top: 0;
-      article {
+    article {
       width: auto;
+      .post-category-wrapper {
+        text-align: center;
+      }
       h1.post-title {
         text-align: center;
       }
-      .meta {
-        float: none;
-        margin: 0 auto;
-        text-align: center;
-        width: 280px;
-        .sticky-meta-wrap, .meta-wrap {
+      .post-content-wrapper {
+        flex-direction: column;
+        .meta {
+          order: 1;
+          flex: 0 1 auto;
+          float: none;
           margin: 0 auto;
-          width: auto;
-          .p-details {
-
-            .detail {
-              display: inline-block;
-              margin-right: 10px;
-
+          text-align: center;
+          .sticky-meta-wrap, .meta-wrap {
+            margin: 0 auto;
+            width: auto;
+            .p-details {
+  
+              .detail {
+                display: inline-block;
+                margin-right: 10px;
+  
+              }
+              .reading-progress {
+                display: none;
+              }
             }
-            .reading-progress {
-              display: none;
-            }
-          }
-          .ad {
-            margin: 0;
-            #carbonads {
-              display: block;
-              padding: 1em;
-              font-family: Verdana, "Helvetica Neue", Helvetica, sans-serif;
-              line-height: 1.5;
-              width: 280px;
-              margin: 0 auto;
-              margin-top: 1em;
-            }
-            
-            #carbonads span {
-              position: relative;
-              display: block;
-              overflow: hidden;
-            }
-            
-            .carbon-img {
-              float: left;
-              margin-right: 1em;
-            }
-            
-            .carbon-img img {
-              display: block;
-              line-height: 1;
-            }
-            
-            .carbon-text {
-              display: block;
-              float: left;
-              max-width: calc(100% - 130px - 1em);
-              text-align: left;
-            }
-            
-            .carbon-poweredby {
-              position: absolute;
-              right: 0; // You can also set the position to the "left" with the value of calc(130px + carbon-text’s font size). If the font-size is 12px, you’ll want to set the left value as 142px. It’ll align the .carbon-text with .carbon-poweredby
-              bottom: 0;
-              display: block;
-              font-size: .8em;
-              text-transform: uppercase;
-              line-height: 1;
-              letter-spacing: 1px;
+            .ad {
+              margin: 0;
+              #carbonads {
+                display: block;
+                padding: 1em;
+                font-family: Verdana, "Helvetica Neue", Helvetica, sans-serif;
+                line-height: 1.5;
+                width: 280px;
+                margin: 0 auto;
+                margin-top: 1em;
+              }
+              
+              #carbonads span {
+                position: relative;
+                display: block;
+                overflow: hidden;
+              }
+              
+              .carbon-img {
+                float: left;
+                margin-right: 1em;
+              }
+              
+              .carbon-img img {
+                display: block;
+                line-height: 1;
+              }
+              
+              .carbon-text {
+                display: block;
+                float: left;
+                max-width: calc(100% - 130px - 1em);
+                text-align: left;
+              }
+              
+              .carbon-poweredby {
+                position: absolute;
+                right: 0; // You can also set the position to the "left" with the value of calc(130px + carbon-text’s font size). If the font-size is 12px, you’ll want to set the left value as 142px. It’ll align the .carbon-text with .carbon-poweredby
+                bottom: 0;
+                display: block;
+                font-size: .8em;
+                text-transform: uppercase;
+                line-height: 1;
+                letter-spacing: 1px;
+              }
             }
           }
         }
+        .content {
+          order: 2;
+          width: auto;
+          margin-top: 1em;
+          margin-right: 0;
+        }
       }
-      .content {
-        width: auto;
-        margin-top: 1em;
+    }
+    .link-list-block {
+      .link-list {
+        columns: 1;
       }
     }
   }

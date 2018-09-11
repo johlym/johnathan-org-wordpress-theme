@@ -1,41 +1,44 @@
-<?php $meta_value = get_post_meta( $post->ID, 'external_link', true ); ?>
-<?php $current_post = $wp_query->current_post; ?>
+<?php 
+$meta_value = get_post_meta( $post->ID, 'external_link', true );
+$current_post = $wp_query->current_post; 
+$post_categories = get_the_category();
+$the_category = substr(strtolower($post_categories[0]->cat_name), 0, -1);
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-<?php if  (!empty( $meta_value )) { ?>
-<article class="h-entry link in-the-loop" itemscope itemtype="http://schema.org/BlogPosting">
-<?php } else { ?> 
-<article class="h-entry in-the-loop" itemscope itemtype="http://schema.org/BlogPosting">
-<?php } ?>
+if ($current_post == 0 && $paged == 1) {
+  $first = 1;
+}
+?>
+
+<article class="h-entry in-the-loop <?php if (!empty($first)) { echo "first"; }?>" itemscope itemtype="http://schema.org/BlogPosting">
   <?php if ( has_post_thumbnail() ) {?>
   <div class="post-image"><?php the_post_thumbnail('featured-image'); ?></div>
   <?php } ?>
 
+  <div class="post-category-wrapper">
+    <span class="post-category post-category-<?php echo $the_category; ?>"><?php echo $the_category; ?></span>
+  </div>
   <h1 class="p-name post-title" itemprop="headline">
-    <?php if  (!empty( $meta_value )) { ?>
-    <a href="<?php echo $meta_value; ?>"><?php the_title(); ?> <i class="far fa-long-arrow-right"></i></a> 
-    <?php } else { ?> 
     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> 
-    <?php } ?>
   </h1>
-  <div class="meta">
-    <div class="meta-wrap">
-      <div class="p-details">
-      <div class="detail author"><strong>Posted by</strong> <span class="author-name"><?php echo get_the_author(); ?></span></div>
-        <div class="detail date"><strong>On:</strong> <time class="dt-publisheddt-published" itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>">
-        <a href="<?php the_permalink(); ?>"><?php echo get_the_date('F d, Y h:i a'); ?></a></time></div>
-        <div class="detail category"><strong>Under:</strong> <?php the_category(', '); ?><br /></div>
+  <time class="dt-publisheddt-published" itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>">
+    &nbsp;
+  </time>
+  <div class="post-content-wrapper">
+    <div class="content">
+    <?php the_content(); ?>
+    </div>
+    <div class="meta">
+      <div class="meta-wrap">
+        <?php if ($current_post == 0): ?>
+        <div class="ad">
+        <?php if ( is_active_sidebar( 'ad-block' ) ) : ?>
+          <?php dynamic_sidebar( 'ad-block' ); ?>
+        <?php endif; ?>
+        </div>
+        <?php endif; ?>
       </div>
-      <?php if ($current_post == 0): ?>
-      <div class="ad">
-      <?php if ( is_active_sidebar( 'ad-block' ) ) : ?>
-        <?php dynamic_sidebar( 'ad-block' ); ?>
-      <?php endif; ?>
-      </div>
-      <?php endif; ?>
     </div>
   </div>
-  <div class="content">
-  <?php the_content(); ?>
-  </div>
 </article>
-<hr>
+<div style="clear: both;"></div>

@@ -7,6 +7,21 @@ function word_count($input) {
 	return "" . $word_count . " " . $appendix;
 } 
 
+function create_post_type() {
+  register_post_type( 'list_link',
+    array(
+      'labels' => array(
+        'name' => __( 'List Links' ),
+        'singular_name' => __( 'List Link' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'supports' => array( 'title', 'custom-fields' )
+    )
+  );
+}
+add_action( 'init', 'create_post_type' );
+
 // Let's unhook the original Jetpakc Related Posts filter
 function jetpackme_remove_rp() {
 	if (class_exists('Jetpack_RelatedPosts')) {
@@ -28,31 +43,30 @@ add_action( 'init', 'register_primary_menu' );
  */
 function widgets_init() {
 
-  // left sidebar
-	register_sidebar( array(
-		'name'          => 'Left Sidebar',
-		'id'            => 'left-sidebar',
-		'before_widget' => '<div class="widget left-flex-child">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3>',
-		'after_title'   => '</h3>',
-  ) );
-  
-  // ad block
+  // after-post block
   register_sidebar( array(
-    'name'          => 'Ad Block',
-    'id'            => 'ad-block',
-    'before_widget' => '<div class="widget left-flex-child ad">',
+    'name'          => 'Intro Block',
+    'id'            => 'intro-block',
+    'before_widget' => '<div class="widget-ib">',
     'after_widget'  => '</div>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>',
+    'before_title'  => '<strong>',
+    'after_title'   => '</strong>',
   ) );
 
   // after-post block
   register_sidebar( array(
     'name'          => 'After Single Post',
     'id'            => 'apw-block',
-    'before_widget' => '<div class="apw-widget">',
+    'before_widget' => '<div class="widget-asp">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>',
+  ) );
+
+  register_sidebar( array(
+    'name'          => 'Ad Block',
+    'id'            => 'ad-block',
+    'before_widget' => '<div class="ad-block">',
     'after_widget'  => '</div>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>',
@@ -64,11 +78,7 @@ add_action( 'widgets_init', 'widgets_init' );
 // Add scripts and stylesheets
 function startwordpress_scripts() {
 	wp_enqueue_style( 'css-base', get_template_directory_uri() . '/style.css', array(), rand(100000,999999) );
-	wp_enqueue_style( 'css-screen', get_template_directory_uri() . '/assets/css/screen.css', array(), rand(100000,999999) );
-	// wp_enqueue_style( 'css-fontawesome-base', get_template_directory_uri() . '/assets/css/fontawesome.min.css', array(), '5.0.1' );
-	// wp_enqueue_style( 'css-fontawesome-brands', get_template_directory_uri() . '/assets/css/fa-brands.min.css', array(), '5.0.1' );
-	// wp_enqueue_style( 'css-fontawesome-regular', get_template_directory_uri() . '/assets/css/fa-regular.min.css', array(), '5.0.1' );
-	
+	wp_enqueue_style( 'css-screen', get_template_directory_uri() . '/assets/css/screen.css', array(), rand(100000,999999) );	
 }
 
 // include custom jQuery
@@ -86,17 +96,10 @@ add_action( 'wp_enqueue_scripts', 'startwordpress_scripts' );
 add_theme_support( 'title-tag' );
 if ( function_exists( 'add_theme_support' ) ) { 
   add_theme_support( 'post-thumbnails' );
-  set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
-
-  // additional image sizes
-  // delete the next line if you do not need additional image sizes
-  add_image_size( 'featured-image', 1200, 9999 ); //300 pixels wide (and unlimited height)
+  set_post_thumbnail_size( 150, 150, true );
+  add_image_size( 'in-post',        1360, 9999 );
+  add_image_size( 'featured-image', 1760, 9999 );
 }
-
-function johnathan_org_post_formats_setup() {
-	add_theme_support( 'post-formats', array( 'aside', 'post' ) );
-}
-add_action( 'after_setup_theme', 'johnathan_org_post_formats_setup' );
 
 /**
  * Disable the emoji's

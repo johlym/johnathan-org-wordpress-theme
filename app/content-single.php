@@ -1,4 +1,5 @@
 <article class="h-entry link in-the-loop" itemscope itemtype="http://schema.org/BlogPosting">
+  <span class="u-url" style="display: none"><?php echo the_permalink(); ?></span>
   <?php if ( has_post_thumbnail() ) {?>
   <div class="post-image"><?php the_post_thumbnail('featured-image'); ?></div>
   <?php } ?>
@@ -8,11 +9,11 @@
   <div class="meta">
     <div class="sticky-meta-wrap">
       <div class="p-details">
-        <div class="detail author"><strong>Posted by</strong> <span class="author-name"><?php echo get_the_author(); ?></span></div>
-        <div class="detail date"><strong>On:</strong> <time class="dt-publisheddt-published" itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>">
-        <a href="<?php the_permalink(); ?>"><?php echo get_the_date('F d, Y h:i a'); ?></a></time></div>
-        <div class="detail category"><strong>Under:</strong> <?php the_category(', '); ?><br /></div>
-        <div class="detail reading-progress"><strong>Reading Progress:</strong> <span class="progress">0</span>%</div>
+        <div class="detail author"><strong>Posted by</strong> <span class="author-name p-author h-card" rel="author"><?php echo get_the_author(); ?></span></div>
+        <div class="detail date"><strong>On:</strong> <time class="dt-published" itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>">
+        <a href="<?php the_permalink(); ?>"><?php echo get_the_date('F j, Y'); ?></a></time></div>
+        <div class="detail category"><strong>Under:</strong> <span class="p-category"><?php the_category(', '); ?>
+        </span></div>
       </div>
       <div class="ad">
       <?php if ( is_active_sidebar( 'ad-block' ) ) : ?>
@@ -22,7 +23,7 @@
     </div>
     
   </div>
-  <div class="content">
+  <div class="content e-content">
   <?php the_content(); ?>
   </div>
 </article>
