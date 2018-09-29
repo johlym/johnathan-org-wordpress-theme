@@ -11,6 +11,7 @@ gulp.task('dist', function (callback) {
       'optimize:images'
     ],
     'copy',
+    'copy:tostylecss',
     'zip',
     'vrev',
     callback

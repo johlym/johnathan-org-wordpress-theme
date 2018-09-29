@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var debug = require('gulp-debug');
+var inject = require('gulp-inject');
 var files = ['app/**/*.php',
 'app/*.txt',
 'app/screenshot.png',
@@ -35,3 +36,18 @@ gulp.task('copy:prod', () => {
   .pipe(debug({title: 'Copying to production destination:'}))
   .pipe(gulp.dest(remoteDest));
 });
+
+gulp.task('copy:tostylecss', () => {
+  return gulp
+  .src('./release/style.css')
+  .pipe(inject(gulp.src('./release/assets/css/screen.css'), {
+    starttag: '/* start screen.css */',
+    endtag: '/* end screen.css */',
+    transform: function (filePath, file) {
+      // return file contents as string
+      return file.contents.toString('utf8')
+    }
+  }))
+  .pipe(gulp.dest('./release'));
+});
+
