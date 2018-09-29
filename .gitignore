@@ -7,6 +7,7 @@ app/assets/css/screen.css
 app/assets/scss/module/fontawesome/*
 release/*
 release.zip
+gulp/tasks/cloudflare.js
 
 ### Node ###
 # Logs

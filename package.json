@@ -1,7 +1,7 @@
 {
   "name": "johnathan-org-theme",
   "description": "A WordPress theme for Johnathan.org",
-  "version": "5.0.62",
+  "version": "5.0.64",
   "license": "MIT",
   "author": {
     "name": "Johnathan Lyman",
@@ -51,6 +51,7 @@
     "gulp-zip": "^4.0.0",
     "minimist": "^1.2.0",
     "postcss-assets": "^5.0.0",
+    "request": "^2.88.0",
     "require-dir": "^0.3.2"
   },
   "dependencies": {

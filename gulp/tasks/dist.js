@@ -23,6 +23,7 @@ gulp.task('dist:prod', function (callback) {
     'dist',
     'bump',
     'copy:prod',
+    'cloudflare:purge',
     callback
   );
 });
