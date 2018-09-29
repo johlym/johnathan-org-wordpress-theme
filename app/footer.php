@@ -1,8 +1,8 @@
 <!-- footer -->
 <div class="footer container-object">
   <div class="footer-text">
-  <i class="far fa-copyright"></i> 
-  2014 – <?php echo date('Y'); ?> Johnathan Lyman.<br /><br />Uptime: <span class="uptime-number"><i class="far fa-sync fa-spin"></i></span> <a href="//status.johnathan.org"><i class="far fa-external-link"></i></a><br /><br />
+  <i class="fas fa-copyright"></i> 
+  2014 – <?php echo date('Y'); ?> Johnathan Lyman.<br /><br /><i class="far fa-chart-bar"></i> Uptime: <a href="//status.johnathan.org"><span class="uptime-number"><i class="far fa-spin fa-spinner-third" style="display:inline-block"></i></span></a><br /><br />
   An IndieWeb Webring<br />
   <a href="https://xn--sr8hvo.ws/🐴📗/previous">←</a>
   🕸💍
@@ -68,6 +68,7 @@
     };
   });
 </script>
+<script src="//rum-static.pingdom.net/pa-5afc634e36f6400006000147.js" async></script>
 </body>
 </html>
 <!-- / template: footer -->
