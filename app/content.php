@@ -8,6 +8,18 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 if ($current_post == 0 && $paged == 1) {
   $first = 1;
 }
+
+if ($the_category == "link") {
+  $icon = "link";
+} else if ($the_category == "post") {
+  $icon = "pencil";
+} else if ($the_category == "review") {
+  $icon = "glasses";
+} else if ($the_category == "video") {
+  $icon = "video";
+} else {
+  $icon = "";
+}
 ?>
 
 <article class="h-entry in-the-loop <?php if (!empty($first)) { echo "first"; }?>" itemscope itemtype="http://schema.org/BlogPosting">
@@ -16,17 +28,24 @@ if ($current_post == 0 && $paged == 1) {
   <?php } ?>
 
   <div class="post-category-wrapper">
-    <span class="post-category post-category-<?php echo $the_category; ?>"><?php echo $the_category; ?></span>
+    <span class="post-category post-category-<?php echo $the_category; ?>"><i class="far fa-fw fa-<?php echo $icon; ?>"></i> <?php echo $the_category; ?></span>
   </div>
   <h1 class="p-name post-title" itemprop="headline">
+    <?php if  (!empty( $meta_value )) { ?>
+    <a href="<?php echo $meta_value; ?>"><?php the_title(); ?></a> 
+    <?php } else { ?> 
     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> 
+    <?php } ?>
   </h1>
-  <time class="dt-publisheddt-published" itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>">
-    &nbsp;
-  </time>
+  <time class="dt-publisheddt-published" itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>" style="display: none"></time>
   <div class="post-content-wrapper">
     <div class="content">
     <?php the_content(); ?>
+    <?php if  (!empty( $meta_value )) { ?>
+    <span class="permalink-icon">
+      <a href="<?php echo the_permalink(); ?>"><i class="far fa-fw fa-link"></i> permalink</a>
+    </span>
+    <?php } ?>
     </div>
     <div class="meta">
       <div class="meta-wrap">
@@ -41,4 +60,3 @@ if ($current_post == 0 && $paged == 1) {
     </div>
   </div>
 </article>
-<div style="clear: both;"></div>
