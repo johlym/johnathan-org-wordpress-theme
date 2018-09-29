@@ -103,7 +103,7 @@ function add_wp_head() {
   <link href="https://github.com/johlym" rel="me" />
   <link href="https://twitter.com/_johlym" rel="me" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Merriweather:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-9ralMzdK1QYsk4yBY680hmsb4/hJ98xK3w0TIaJ3ll4POWpWUYaA2bRjGGujGT8w" crossorigin="anonymous">'
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-9ralMzdK1QYsk4yBY680hmsb4/hJ98xK3w0TIaJ3ll4POWpWUYaA2bRjGGujGT8w" crossorigin="anonymous">';
 }
 
 add_action( 'wp-head', 'add_wp_head', 0 );
