@@ -75,23 +75,20 @@ function widgets_init() {
 }
 add_action( 'widgets_init', 'widgets_init' );
 
-// Add scripts and stylesheets
-function startwordpress_scripts() {
-	wp_enqueue_style( 'css-base', get_template_directory_uri() . '/style.css', array(), rand(100000,999999) );
-	wp_enqueue_style( 'css-screen', get_template_directory_uri() . '/assets/css/screen.css', array(), rand(100000,999999) );	
-}
-
 // include custom jQuery
 function force_custom_jquery_version() {
-
 	wp_deregister_script('jquery');
 	wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), null, true);
-
 }
 
 add_action('wp_enqueue_scripts', 'force_custom_jquery_version');
 
-add_action( 'wp_enqueue_scripts', 'startwordpress_scripts' );
+// Add scripts and stylesheets
+function theme_stylesheets() {
+	wp_enqueue_style( 'css-base', get_template_directory_uri() . '/style.css', array(), rand(100000,999999) );	
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_stylesheets' );
 
 add_theme_support( 'title-tag' );
 if ( function_exists( 'add_theme_support' ) ) { 
@@ -101,6 +98,15 @@ if ( function_exists( 'add_theme_support' ) ) {
   add_image_size( 'featured-image', 1760, 9999 );
 }
 
+function add_wp_head() {
+  echo '<link href="https://micro.blog/johlym" rel="me" />
+  <link href="https://github.com/johlym" rel="me" />
+  <link href="https://twitter.com/_johlym" rel="me" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Merriweather:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-9ralMzdK1QYsk4yBY680hmsb4/hJ98xK3w0TIaJ3ll4POWpWUYaA2bRjGGujGT8w" crossorigin="anonymous">'
+}
+
+add_action( 'wp-head', 'add_wp_head', 0 );
 /**
  * Disable the emoji's
  */
@@ -148,5 +154,43 @@ function disable_emojis() {
  
  return $urls;
  }
+
+ // remove dashicons
+function wpdocs_dequeue_dashicon() {
+	if (current_user_can( 'update_core' )) {
+	    return;
+	}
+	wp_deregister_style('dashicons');
+}
+add_action( 'wp_enqueue_scripts', 'wpdocs_dequeue_dashicon' );
+
+// alert shortcode
+
+function alert_shortcode( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'level' => 'level',
+	), $atts );
+
+	return '<div class="alert alert-' . esc_attr($a['level']) . '" role="alert">' . $content . '</div>';
+}
+add_shortcode( 'alert', 'alert_shortcode' );
+
+function print_to_log( $message )
+{
+    if ( true === WP_DEBUG ) {
+        if ( is_array( $message ) || is_object( $message ) ) {
+            error_log( print_r( $message, true ) );
+        } else {
+            error_log( $message );
+        }
+    }
+}
+
+function clear_cache() {
+  print_to_log('FIND ME');
+}
+
+add_filter( 'xmlrpc_publish_post', 'clear_cache');
+
 
 ?>
