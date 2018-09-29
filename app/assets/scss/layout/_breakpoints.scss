@@ -103,11 +103,6 @@
         }
       }
     }
-    .link-list-block {
-      .link-list {
-        columns: 1;
-      }
-    }
   }
 }
 @media only screen and (max-width:768px) {
@@ -129,6 +124,11 @@
   }
   .main article h1 {
     font-size: 1.85em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .lic-bottom {
+    flex-direction: column !important;
   }
 }
 @media only screen and (max-width:340px) {
