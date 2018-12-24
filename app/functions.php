@@ -103,7 +103,7 @@ function add_wp_head() {
   <link href="https://micro.blog/johlym" rel="me" />
   <link href="https://github.com/johlym" rel="me" />
   <link href="https://twitter.com/_johlym" rel="me" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Merriweather:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/zaw2xqg.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-9ralMzdK1QYsk4yBY680hmsb4/hJ98xK3w0TIaJ3ll4POWpWUYaA2bRjGGujGT8w" crossorigin="anonymous">
   <link rel="dns-prefetch" href="//cdn.fontawesome.com">
   <link rel="dns-prefetch" href="//updown.io">';
