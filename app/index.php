@@ -52,7 +52,7 @@
               </div>
               <div class="lic-cat-list lic-posts">
                 <div class="lic-cat-list-title">
-                <i class="far fa-fw fa-pencil"></i> <h4>Posts</h4>
+                <i class="far fa-fw fa-pencil"></i> <h4>Originals</h4>
                 </div>
                 <ul class="fa-ul">
                   <?php 
@@ -66,7 +66,7 @@
                         'relation' => 'AND',
                         array(
                           'taxonomy'         => 'category',
-                          'terms'            => 'posts',
+                          'terms'            => 'originals',
                           'field'            => 'slug',
                         ),
                       ),

@@ -11,7 +11,7 @@ if ($current_post == 0 && $paged == 1) {
 
 if ($the_category == "link") {
   $icon = "link";
-} else if ($the_category == "post") {
+} else if ($the_category == "original") {
   $icon = "pencil";
 } else if ($the_category == "review") {
   $icon = "glasses";

@@ -5,7 +5,7 @@ $the_category = substr(strtolower($post_categories[0]->cat_name), 0, -1);
 
 if ($the_category == "link") {
   $icon = "link";
-} else if ($the_category == "post") {
+} else if ($the_category == "original") {
   $icon = "pencil";
 } else if ($the_category == "review") {
   $icon = "glasses";

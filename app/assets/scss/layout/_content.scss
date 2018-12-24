@@ -75,7 +75,7 @@
         vertical-align: middle;
         color: white;
       }
-      .post-category-post {
+      .post-category-original {
         background: #009DDC;
       }
       .post-category-link {
@@ -218,7 +218,8 @@
         iframe,
         video {
           width: 100%;
-          max-width: 750px;
+          max-width: 640px;
+          height: 360px;
         }
         blockquote {
           margin: 0em;

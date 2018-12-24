@@ -99,14 +99,17 @@ if ( function_exists( 'add_theme_support' ) ) {
 }
 
 function add_wp_head() {
-  echo '<link href="https://micro.blog/johlym" rel="me" />
+  echo '<meta name="description" content="A hand-crafted technology product by Johnathan Lyman" />
+  <link href="https://micro.blog/johlym" rel="me" />
   <link href="https://github.com/johlym" rel="me" />
   <link href="https://twitter.com/_johlym" rel="me" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Merriweather:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-9ralMzdK1QYsk4yBY680hmsb4/hJ98xK3w0TIaJ3ll4POWpWUYaA2bRjGGujGT8w" crossorigin="anonymous">';
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-9ralMzdK1QYsk4yBY680hmsb4/hJ98xK3w0TIaJ3ll4POWpWUYaA2bRjGGujGT8w" crossorigin="anonymous">
+  <link rel="dns-prefetch" href="//cdn.fontawesome.com">
+  <link rel="dns-prefetch" href="//updown.io">';
 }
 
-add_action( 'wp-head', 'add_wp_head', 0 );
+add_action( 'wp_head', 'add_wp_head', 0 );
 /**
  * Disable the emoji's
  */
@@ -175,19 +178,11 @@ function alert_shortcode( $atts, $content = null ) {
 }
 add_shortcode( 'alert', 'alert_shortcode' );
 
-function print_to_log( $message )
-{
-    if ( true === WP_DEBUG ) {
-        if ( is_array( $message ) || is_object( $message ) ) {
-            error_log( print_r( $message, true ) );
-        } else {
-            error_log( $message );
-        }
-    }
-}
-
 function clear_cache() {
-  print_to_log('FIND ME');
+  $curl = curl_init();
+    curl_setopt ($curl, CURLOPT_URL, CACHE_PURGE_URL);
+    curl_exec ($curl);
+    curl_close ($curl);
 }
 
 add_filter( 'xmlrpc_publish_post', 'clear_cache');
