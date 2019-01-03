@@ -3,12 +3,44 @@
   padding-top: 50px;
   margin-top: 50px;
   background-color: #333;
-  color: #fff;
-  .footer-text {
+  color: #ccc;
+  font-size: 12px;
+  line-height: 1.8em;
+
+  .footer-container {
+    max-width: 840px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: stretch;
+    
+    .footer-object {
+      flex: 1 1 auto;
+      max-width: 150px;
+      margin: 0 9px;
+      text-align: left;
+      a {
+        color: #2e8cca;
+      }
+      h3 {
+        margin-top: 0;
+      }
+      ul {
+        margin: 0;
+        padding-left: 0;
+        list-style-type: none;
+      }
+    }
+  }
+  .wide {
+    max-width: 840px;
+    margin: 3em auto 0em auto;
     text-align: center;
-    font-size: 12px;
     a {
-      color: #fff;
+      color: #2e8cca
     }
   }
 }

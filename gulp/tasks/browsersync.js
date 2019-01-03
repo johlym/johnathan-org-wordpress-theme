@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
-var proxy = 'v4-local.johnathan.org:80';
+var proxy = 'blogv4.test';
 
 gulp.task('browsersync:production', function (callback) {
   browserSync.init({

@@ -13,7 +13,7 @@ var files = ['app/**/*.php',
 'app/assets/svg/*'];
 var base = './app';
 var prodDest = './release';
-var devDest = '../app/public/wp-content/themes/jorgredux';
+var devDest = '../instance/app/public/wp-content/themes/jorgredux';
 var remoteDest = '/Volumes/wp-web/wp-content/themes/jorgredux';
 
 gulp.task('copy', () => {
@@ -25,7 +25,7 @@ gulp.task('copy', () => {
 
 gulp.task('copy:dev', () => {
   return gulp
-  .src(files, {base: base})
+  .src(['./release/**/*'], {base: './release'})
   .pipe(debug({title: 'Copying to development destination:'}))
   .pipe(gulp.dest(devDest));
 });

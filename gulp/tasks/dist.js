@@ -27,3 +27,11 @@ gulp.task('dist:prod', function (callback) {
     callback
   );
 });
+
+gulp.task('dist:dev', function (callback) {
+  runSequence(
+    'dist',
+    'copy:dev',
+    callback
+  );
+});

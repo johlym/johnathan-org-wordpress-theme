@@ -22,7 +22,7 @@ function create_post_type() {
 }
 add_action( 'init', 'create_post_type' );
 
-// Let's unhook the original Jetpakc Related Posts filter
+// Let's unhook the original Jetpack Related Posts filter
 function jetpackme_remove_rp() {
 	if (class_exists('Jetpack_RelatedPosts')) {
 		$jprp = Jetpack_RelatedPosts::init();
@@ -45,16 +45,6 @@ function widgets_init() {
 
   // after-post block
   register_sidebar( array(
-    'name'          => 'Intro Block',
-    'id'            => 'intro-block',
-    'before_widget' => '<div class="widget-ib">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<strong>',
-    'after_title'   => '</strong>',
-  ) );
-
-  // after-post block
-  register_sidebar( array(
     'name'          => 'After Single Post',
     'id'            => 'apw-block',
     'before_widget' => '<div class="widget-asp">',
@@ -63,10 +53,21 @@ function widgets_init() {
     'after_title'   => '</h3>',
   ) );
 
-  register_sidebar( array(
+   // ad block
+   register_sidebar( array(
     'name'          => 'Ad Block',
     'id'            => 'ad-block',
-    'before_widget' => '<div class="ad-block">',
+    'before_widget' => '<div class="widget left-flex-child ad">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>',
+  ) );
+
+  // footer widget space
+  register_sidebar( array(
+    'name'          => 'Footer Widget Area 1',
+    'id'            => 'footer-wa-1',
+    'before_widget' => '<div class="footer-object">',
     'after_widget'  => '</div>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>',
@@ -90,6 +91,15 @@ function theme_stylesheets() {
 
 add_action( 'wp_enqueue_scripts', 'theme_stylesheets' );
 
+function modify_contact_methods($profile_fields) {
+
+	// Add new fields
+	$profile_fields['twitter'] = 'Twitter';
+
+	return $profile_fields;
+}
+add_filter('user_contactmethods', 'modify_contact_methods');
+
 add_theme_support( 'title-tag' );
 if ( function_exists( 'add_theme_support' ) ) { 
   add_theme_support( 'post-thumbnails' );
@@ -100,13 +110,15 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 function add_wp_head() {
   echo '<meta name="description" content="A hand-crafted technology product by Johnathan Lyman" />
+  <link rel="dns-prefetch" href="//cdn.fontawesome.com">
+  <link rel="dns-prefetch" href="//pro.fontawesome.com">
+  <link rel="dns-prefetch" href="//updown.io">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link href="https://micro.blog/johlym" rel="me" />
   <link href="https://github.com/johlym" rel="me" />
   <link href="https://twitter.com/_johlym" rel="me" />
-  <link rel="stylesheet" href="https://use.typekit.net/zaw2xqg.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-9ralMzdK1QYsk4yBY680hmsb4/hJ98xK3w0TIaJ3ll4POWpWUYaA2bRjGGujGT8w" crossorigin="anonymous">
-  <link rel="dns-prefetch" href="//cdn.fontawesome.com">
-  <link rel="dns-prefetch" href="//updown.io">';
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i,900" rel="stylesheet">';
 }
 
 add_action( 'wp_head', 'add_wp_head', 0 );

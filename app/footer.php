@@ -1,12 +1,31 @@
 <!-- footer -->
-<div class="footer container-object">
-  <div class="footer-text">
-  <i class="fas fa-copyright"></i> 
-  2014 – <?php echo date('Y'); ?> Johnathan Lyman.<br /><br /><i class="far fa-chart-bar"></i> Uptime: <a href="//status.johnathan.org"><span class="uptime-number"><i class="far fa-spin fa-spinner-third" style="display:inline-block"></i></span></a><br /><br />
-  An IndieWeb Webring<br />
-  <a href="https://xn--sr8hvo.ws/🐴📗/previous">←</a>
-  🕸💍
-  <a href="https://xn--sr8hvo.ws/🐴📗/next">→</a>
+<div class="footer">
+  <div class="footer-container">
+    <?php if ( is_active_sidebar( 'footer-wa-1' ) ) : ?>
+        <!-- footer-wa-1 -->
+        <?php dynamic_sidebar( 'footer-wa-1' ); ?>
+        <!-- / footer-wa-1 -->
+    <?php endif; ?>
+    <?php if ( is_active_sidebar( 'footer-wa-2' ) ) : ?>
+        <!-- footer-wa-2 -->
+        <?php dynamic_sidebar( 'footer-wa-2' ); ?>
+        <!-- / footer-wa-2 -->
+    <?php endif; ?>
+    <div class="footer-object">
+      <h3>Archives</h3>
+      <ul class="yearly-archives">
+        <?php wp_get_archives('type=yearly'); ?>
+      </ul>
+    </div>
+  </div>
+  <div class="wide">
+    &copy; 
+    2014-<?php echo date('Y'); ?> Johnathan Lyman. <br />
+    Powered by <i class="fab fa-fw fa-wordpress"></i> <a href="https://wordpress.org">WordPress</a>. Hosted on <i class="fab fa-fw fa-digital-ocean"></i> <a href="https://johnathan.org/goto/digitalocean">DigitalOcean</a>. DNS by <i class="fas fa-fw fa-cloud"></i> <a href="https://cloudflare.com">Cloudflare</a>. <br /><i class="far fa-chart-bar"></i> Uptime: <a href="//status.johnathan.org"><span class="uptime-number"><i class="far fa-spin fa-spinner-third" style="display:inline-block"></i></span></a><br /><br />
+    An IndieWeb Webring<br />
+    <a href="https://xn--sr8hvo.ws/🐴📗/previous">←</a>
+    🕸💍
+    <a href="https://xn--sr8hvo.ws/🐴📗/next">→</a>
   </div>
 </div>
 <div style="display: none"><address id="hcard-Johnathan-Lyman" class="vcard">
